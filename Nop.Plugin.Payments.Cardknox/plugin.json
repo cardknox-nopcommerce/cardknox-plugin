@@ -1,0 +1,11 @@
+﻿{
+  "Group": "Payment methods",
+  "FriendlyName": "Cardknox",
+  "SystemName": "Payments.Cardknox",
+  "Version": "0.1",
+  "SupportedVersions": [ "4.10" ],
+  "Author": "Cardknox - A Fidelity Payments Company",
+  "DisplayOrder": 1,
+  "FileName": "Nop.Plugin.Payments.Cardknox.dll",
+  "Description": "This plugin allows paying with Cardknox"
+}
