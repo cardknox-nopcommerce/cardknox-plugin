@@ -1,0 +1,9 @@
+﻿Group: Payment methods
+FriendlyName: Credit Card
+SystemName: Payments.Cardknox
+Version: 0.1
+SupportedVersions: 3.90
+Author: Cardknox - A Fidelity Payments Company
+DisplayOrder: 1
+FileName: Nop.Plugin.Payments.Cardknox.dll
+Description: This plugin allows paying with Cardknox

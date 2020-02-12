@@ -1,0 +1,119 @@
+﻿@{
+    Layout = "";
+}
+@model Nop.Plugin.Payments.Cardknox.Models.ConfigurationModel
+@using Nop.Web.Framework;
+
+@Html.Action("StoreScopeConfiguration", "Setting", new { area = "Admin" })
+
+@using (Html.BeginForm())
+{
+    @Html.AntiForgeryToken()
+    <div class="panel-group">
+        <div class="panel panel-default">
+            <div class="panel-body">
+                <p>
+                    <b>Cardknox nopCommerce plugin settings</b>
+                </p>
+
+                <div class="form-group">
+                    <div class="col-md-3">
+                        @Html.OverrideStoreCheckboxFor(model => model.TransactionKey_OverrideForStore, model => model.TransactionKey, Model.ActiveStoreScopeConfiguration)
+                        @Html.NopLabelFor(model => model.TransactionKey)
+                    </div>
+                    <div class="col-md-9">
+                        @Html.NopEditorFor(model => model.TransactionKey)
+                        @Html.ValidationMessageFor(model => model.TransactionKey)
+                    </div>
+                </div>
+                <div class="form-group">
+                    <div class="col-md-3">
+                        @Html.OverrideStoreCheckboxFor(model => model.SoftwareName_OverrideForStore, model => model.SoftwareName, Model.ActiveStoreScopeConfiguration)
+                        @Html.NopLabelFor(model => model.SoftwareName)
+                    </div>
+                    <div class="col-md-9">
+                        @Html.NopEditorFor(model => model.SoftwareName)
+                        @Html.ValidationMessageFor(model => model.SoftwareName)
+                    </div>
+                </div>
+                <div class="form-group">
+                    <div class="col-md-3">
+                        @Html.OverrideStoreCheckboxFor(model => model.SoftwareVersion_OverrideForStore, model => model.SoftwareVersion, Model.ActiveStoreScopeConfiguration)
+                        @Html.NopLabelFor(model => model.SoftwareVersion)
+                    </div>
+                    <div class="col-md-9">
+                        @Html.NopEditorFor(model => model.SoftwareVersion)
+                        @Html.ValidationMessageFor(model => model.SoftwareVersion)
+                    </div>
+                </div>
+                <div class="form-group">
+                    <div class="col-md-3">
+                        @Html.OverrideStoreCheckboxFor(model => model.UseCustomSoftwareApiVersion_OverrideForStore, model => model.UseCustomSoftwareApiVersion, Model.ActiveStoreScopeConfiguration)
+                        @Html.NopLabelFor(model => model.UseCustomSoftwareApiVersion)
+                    </div>
+                    <div class="col-md-9">
+                        @Html.NopEditorFor(model => model.UseCustomSoftwareApiVersion)
+                        @Html.ValidationMessageFor(model => model.UseCustomSoftwareApiVersion)
+                    </div>
+                </div>
+                <div class="form-group">
+                    <div class="col-md-3">
+                        @Html.OverrideStoreCheckboxFor(model => model.SoftwareApiVersion_OverrideForStore, model => model.SoftwareApiVersion, Model.ActiveStoreScopeConfiguration)
+                        @Html.NopLabelFor(model => model.SoftwareApiVersion)
+                    </div>
+                    <div class="col-md-9">
+                        @Html.NopEditorFor(model => model.SoftwareApiVersion)
+                        @Html.ValidationMessageFor(model => model.SoftwareApiVersion)
+                    </div>
+                </div>
+                <div class="form-group">
+                    <div class="col-md-3">
+                        @Html.OverrideStoreCheckboxFor(model => model.UseShippingAddressAsBilling_OverrideForStore, model => model.UseShippingAddressAsBilling, Model.ActiveStoreScopeConfiguration)
+                        @Html.NopLabelFor(model => model.UseShippingAddressAsBilling)
+                    </div>
+                    <div class="col-md-9">
+                        @Html.NopEditorFor(model => model.UseShippingAddressAsBilling)
+                        @Html.ValidationMessageFor(model => model.UseShippingAddressAsBilling)
+                    </div>
+                </div>
+                <div class="form-group">
+                    <div class="col-md-3">
+                        @Html.OverrideStoreCheckboxFor(model => model.TransactModeId_OverrideForStore, model => model.TransactModeId, Model.ActiveStoreScopeConfiguration)
+                        @Html.NopLabelFor(model => model.TransactModeValues)
+                    </div>
+                    <div class="col-md-9">
+                        @Html.NopDropDownList("TransactModeId", Model.TransactModeValues)
+                    </div>
+                </div>
+                <div class="form-group">
+                    <div class="col-md-3">
+                        @Html.OverrideStoreCheckboxFor(model => model.AdditionalFee_OverrideForStore, model => model.AdditionalFee, Model.ActiveStoreScopeConfiguration)
+                        @Html.NopLabelFor(model => model.AdditionalFee)
+                    </div>
+                    <div class="col-md-9">
+                        @Html.NopEditorFor(model => model.AdditionalFee)
+                        @Html.ValidationMessageFor(model => model.AdditionalFee)
+                    </div>
+                </div>
+                <div class="form-group">
+                    <div class="col-md-3">
+                        @Html.OverrideStoreCheckboxFor(model => model.AdditionalFeePercentage_OverrideForStore, model => model.AdditionalFeePercentage, Model.ActiveStoreScopeConfiguration)
+                        @Html.NopLabelFor(model => model.AdditionalFeePercentage)
+                    </div>
+                    <div class="col-md-9">
+                        @Html.NopEditorFor(model => model.AdditionalFeePercentage)
+                        @Html.ValidationMessageFor(model => model.AdditionalFeePercentage)
+                    </div>
+                </div>
+                <div class="form-group">
+                    <div class="col-md-3">
+                        &nbsp;
+                    </div>
+                    <div class="col-md-9">
+                        <input type="submit" name="save" class="btn bg-blue" value="@T("Admin.Common.Save")" />
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+}
